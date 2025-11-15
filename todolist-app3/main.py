@@ -21,7 +21,7 @@ def get_tarefa(tarefa_id):
     tarefa = buscar_tarefa(tarefa_id)
     return tarefa
 
-@app.route('/api/tarefa<int:tarefa_id>', methods=['DELETE'])
+@app.route('/api/tarefa/<int:tarefa_id>', methods=['DELETE'])
 def delete_tarefa(tarefa_id):
     apagar_tarefa(tarefa_id)
     return{

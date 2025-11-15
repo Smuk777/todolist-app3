@@ -43,7 +43,7 @@ def apagar_tarefa(tarefa_id):
 
 def criar_tarefa(nome, descricao):
     conn = get_conexao()
-    cursor = conn.cursor
+    cursor = conn.cursor()
     cursor.execute(
         "INSERT INTO tarefas(nome, descricao) VALUES(%s, %s)",
         (nome, descricao)
@@ -56,7 +56,7 @@ def atualizar_tarefa(nome, descricao, tarefa_id):
     conn = get_conexao()
     cursor = conn.cursor()
     cursor.execute(
-        "UPDATE tarefas SET nome=%s, descricao=%s, WHERE id=%s",
+        "UPDATE tarefas SET nome=%s, descricao=%s WHERE id=%s",
         (nome, descricao, tarefa_id)
     )
     conn.commit()
